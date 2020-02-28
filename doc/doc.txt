@@ -1,0 +1,33 @@
+-------------------- DOCUMENTATION --------------------
+
+In my implementation, I decided to generate 2 Java classes through my xsd schema:
+
+    1)	BookshelfType
+    2)	BookshelvesType
+
+These classes don’t contain the read counter for the resource, because I intended to use it inside a internal collection. 
+References to item and bookshelves use the HATEOAS approach in order to retrieve also the single resource in a more efficient way.
+
+Bookshelves are uniquely identified through a name and an integer id: when requesting the creation of a new Bookshelf, 
+the system looks up for an existing Bookshelf with the same name and if not present it creates and returns a new one. 
+If no name is provided, the system rejects the request and returns a bad request response. When searching for bookshelves, 
+a keyword has to be provided: even if there are no results, a success code and an empty body is provided. As a metrics of match, 
+the searchBookshelf method compares the keyword provided with the name of the Bookshelf.
+
+When adding an Item to a certain Bookshelf, the Item has to be present inside the Biblio system, otherwise the system will notify 
+the caller that there has been an issue regarding the completion of the request. If it has been requested multiple times to add a 
+certain Item (which does exist in the system), a success code is always returned and there are no redundancy of items inside the 
+Bookshelf. When removing an Item from a certain Bookshelf, the Item could be present or not inside the System: the entire list of 
+items inside all bookshelves is refreshed when:
+
+    1)	the deleteItem method is called so that if some Bookshelf contains the Item, that one I removed
+    2)	the getItems method is called so that if some Item is removed from the Neo4J database without calling the web server, 
+        the Bookshelf’s list of Items is refreshed
+
+When a deletion of a Bookshelf is requested, the system returns a success code even if the Bookshelf is not present inside the system. 
+Same behavior is used when removing an Item from a Bookshelf.
+
+When comparing Items and ItemReader, the system is comparing Title and, if present, Subtitle: if title and subtitle are equals, that 
+Item or ItemReader is considered to be equal.
+
+

@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "43297f6f-a3a9-4829-a4b3-a67989566221",
+		"name": "DP2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Biblio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Items",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/items?keyword=Formal+hardware&beforeInclusive=2020&afterInclusive=1900",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"items"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Formal+hardware"
+						},
+						{
+							"key": "beforeInclusive",
+							"value": "2020"
+						},
+						{
+							"key": "afterInclusive",
+							"value": "1900"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/items/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"items",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<item>\n    <self>http://localhost:8080/BiblioSystem/rest/biblio/items/0</self>\n    <author>Aarti Gupta</author>\n    <title>Formal hardware verification methods: A survey</title>\n    <article journal=\"0925-9856\" volume=\"1991\" number=\"9\"/>\n    <citedBy>http://localhost:8080/BiblioSystem/rest/biblio/items/0/citedBy</citedBy>\n    <citations>http://localhost:8080/BiblioSystem/rest/biblio/items/0/citations</citations>\n    <targets>http://localhost:8080/BiblioSystem/rest/biblio/items/0/citations/targets</targets>\n</item>"
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Bookshelf",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/bookshelf?name=PrimoScaffale",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"bookshelf"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "PrimoScaffale"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Bookshelves",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/bookshelf?keyword=S",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"bookshelf"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "S"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bookshelf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/bookshelf/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"bookshelf",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Items inside Bookshelf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/bookshelf/0/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"bookshelf",
+						"0",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Item to Bookshelf",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<item>\n    <self>http://localhost:8080/BiblioSystem/rest/biblio/items/2</self>\n    <author>Jade Alglave</author>\n    <title>A formal hierarchy of weak memory models</title>\n    <subtitle>An added subtitle</subtitle>\n    <article journal=\"0925-9856\" volume=\"2011\" number=\"2\"/>\n    <citedBy>http://localhost:8080/BiblioSystem/rest/biblio/items/2/citedBy</citedBy>\n    <citations>http://localhost:8080/BiblioSystem/rest/biblio/items/2/citations</citations>\n    <targets>http://localhost:8080/BiblioSystem/rest/biblio/items/2/citations/targets</targets>\n</item>"
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/bookshelf/0/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"bookshelf",
+						"0",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Item from Bookshelf",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/bookshelf/0/items/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"bookshelf",
+						"0",
+						"items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bookshelf",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/bookshelf/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"bookshelf",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get read number of Bookshelf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/bookshelf/9/stats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"bookshelf",
+						"9",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/items/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"items",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Item",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<item>\n    <self>http://localhost:8080/BiblioSystem/rest/biblio/items/2</self>\n    <author>Jade Alglave</author>\n    <title>A formal hierarchy of weak memory models</title>\n    <subtitle>Some added subtitle</subtitle>\n    <article journal=\"0925-9856\" volume=\"2011\" number=\"2\"/>\n    <citedBy>http://localhost:8080/BiblioSystem/rest/biblio/items/2/citedBy</citedBy>\n    <citations>http://localhost:8080/BiblioSystem/rest/biblio/items/2/citations</citations>\n    <targets>http://localhost:8080/BiblioSystem/rest/biblio/items/2/citations/targets</targets>\n</item>"
+				},
+				"url": {
+					"raw": "http://localhost:8080/BiblioSystem/rest/biblio/items/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BiblioSystem",
+						"rest",
+						"biblio",
+						"items",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
